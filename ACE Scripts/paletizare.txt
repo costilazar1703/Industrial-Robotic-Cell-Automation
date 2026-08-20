@@ -1,0 +1,17 @@
+.PROGRAM paletizare()
+        PARAMETER HAND.TIME = 0.5
+        SPEED 100 ALWAYS
+        TOOL TRANS(0,0,25)
+        MOVE safe
+        OPEN
+        BREAK
+        FOR i = 0 TO 9
+            SET pick = SHIFT(p1 BY 0,0,10*(9-i))
+            SET place = SHIFT(p2 BY 0,0,0)
+            CALL p_p(pick, place)
+            WAIT SIG(1001)
+            WAIT SIG(-1001)
+        END
+        MOVE safe
+.END
+

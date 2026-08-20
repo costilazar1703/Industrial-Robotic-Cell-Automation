@@ -1,0 +1,9 @@
+.PROGRAM banda()
+        WAIT SIG(1002)
+        SIGNAL 1
+ 10     TIMER 1 = 0
+        WAIT ((TIMER(1) > 30) OR SIG(1003))
+        IF TIMER(1) > 30 GOTO 50
+        GOTO 10
+ 50     SIGNAL -1
+.END
