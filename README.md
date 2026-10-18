@@ -1,23 +1,23 @@
-# Industrial Robotic Cell Simulation & Automation
+# Industrial Robotic Cell Simulation and Automation
 
-## Overview
-This project provides a complete 3D simulation and control implementation of an automated industrial robotic cell, developed during the Summer School of Robotics at Politehnica University of Bucharest (UPB). It features a multi-robot pick-and-place system with real-time conveyor belt synchronization and dynamic object handling.
+A 3D simulation and control program for an automated robotic cell, made at the Robotics Summer School at Politehnica University of Bucharest (UPB). Several robots do pick-and-place work, synchronized with a conveyor belt, on parts that are moving.
 
-## Technologies Used
-* **Environment:** Omron Adept ACE (Automation Control Environment)
-* **Robotics Programming:** V+ Language
-* **3D Scene & Logic Scripting:** C# (.NET)
+## Technologies
+- **Environment:** Omron Adept ACE
+- **Robot programming:** V+
+- **3D scene logic:** C# (.NET)
 
-## Key Features & Implemented Logic
-* **Multi-Controller Synchronization:** Coordinated logic between multiple SmartControllers (e.g., Cobra and Viper industrial robots) to ensure seamless handovers and collision-free operation.
-* **Automated Conveyor Tracking:** V+ programs manage digital I/O signals (`WAIT SIG`, `SIGNAL`) to control conveyor belt states based on real-time sensor feedback and part presence.
-* **Custom C# Visualization Scripts:** Custom C# scripts executed within the ACE runtime to monitor configuration parameters, calculate dynamic 3D object intersections (bounding boxes), and manage parent-child object relations for accurate real-time rendering of moving parts.
-* **Palletizing & Sorting Routines:** Automated pick-and-place routines featuring Z-axis indexing, coordinate transformation, and end-effector (pneumatic gripper) state management.
+## What it does
+- **Two synchronized controllers:** separate SmartControllers (Cobra and Viper robots) coordinate so that parts are handed over without collisions.
+- **Conveyor control:** V+ programs use digital I/O signals (`WAIT SIG`, `SIGNAL`) to start and stop the belt based on the sensors and on whether a part is present.
+- **C# scripts in ACE:** read configuration parameters, compute 3D intersections between objects (bounding boxes) and manage parent-child links, so that moving and gripped parts are shown correctly.
+- **Palletizing and sorting:** pick-and-place routines with Z-axis indexing, coordinate transformations and gripper (pneumatic) control.
 
-## Project Structure
+## Project structure
 ```text
-├── project/             # Omron Adept ACE workspace and project files (.awp)
-├── ACE Scripts             # Exported V+ programs
-├── C# Visualisation Script    #  C# scripts
-│ Configuration Parameters
+├── Project/                    # Omron Adept ACE project (.awp)
+├── ACE Scripts/                # exported V+ programs
+├── C# Visualisation Script/    # C# script
+├── Configuration Parameters/   # belt, sensor and gripper parameters
 └── README.md
+```
